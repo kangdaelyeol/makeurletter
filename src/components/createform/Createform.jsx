@@ -1,8 +1,8 @@
 import React from "react";
 import Styles from "./createform.module.css";
 
-const Createform = () => {
-
+const Createform = ({scenes, currentScene, elements, currentElement}) => {
+  
 
   return (
     <div className="container">
