@@ -36,17 +36,17 @@ const ScrollMovie = ({ styles, pictures, parentCurrent }) => {
 		container.style.height = `${parentCurrent * scale}px`;
 	};
 
-	const updateScroll = () => {};
+	const updateScroll = () => {
+		// logic For canvas draw img
+	};
 
 	useEffect(() => {
 		updateCanvasSize();
-		window.addEventListener('resize', updateCanvasSize);
-		window.addEventListener('scroll', updateScroll);
+		parentCurrent.addEventListener('resize', updateCanvasSize);
 		return () => {
-			window.removeEventListener('resize', updateCanvasSize);
-			window.removeEventListener('scroll', updateScroll);
+			parentCurrent.removeEventListener('resize', updateCanvasSize);
 		};
-	}, [p_width, p_height, scale]);
+	}, []);
 
 	return (
 		<div ref={containerRef} className={Styles.scroll__movie}>
